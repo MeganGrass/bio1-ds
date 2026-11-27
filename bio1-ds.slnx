@@ -1,0 +1,9 @@
+<Solution>
+  <Configurations>
+    <BuildType Name="Debug PSX-USA" />
+    <BuildType Name="Release PSX-USA" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="bio1-ds.vcxproj" Id="76445bf5-6523-7243-6a75-299b2693214d" />
+</Solution>

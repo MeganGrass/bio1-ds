@@ -1,0 +1,468 @@
+; makefile.link: the PSYLINK 2.52 link script of the 13 PlayStation programs of SLUS-00747 (USA), linked in ONE run, as bio2-ds does:
+; the main program SLUS_007.47 (the groups text and bss, written to the CPE) and the 12 PROG2 overlays, one group each, written to
+; their own file("...") images. tools\cpe2exe.exe turns the CPE and each image into a PS-X EXE.
+;
+; The names between two at signs are placeholders that tools\gen_linkscript.exe fills in right before the run (PSYLINK has no
+; variables): the PSY-Q locations from tools\sdkroot.ini, and from the makefile OBJ (the compiled objects), OVL (the objects of the
+; overlays, see below) and LINK (the folder the images are written to).
+;
+; Overlays share one name space with everything else in one run, but the game's overlays are separate programs that load at the same
+; address and use the same names (the stage code of zombie, hunter, crow, ... exists once per stage; every overlay links the SDK
+; startup object NONE2.OBJ). So each overlay's objects are made distinct first:
+;   - the sections are named per overlay, STAGE3.text, STAGE3.data, ... (cc263 -sSTAGE3, i.e. ASPSX -sSTAGE3, as bio2-ds does), and
+;   - tools\ovlprefix.exe gives the overlay's global names the prefix of the overlay (Em06_Move_dodge -> STAGE3_Em06_Move_dodge) and
+;     NONE2.OBJ both the prefix and the sections. The copies are in the OVL folder, one subfolder per overlay; no name is part of
+;     an executable.
+; An overlay's entry point is its STAGE3___SN_ENTRY_POINT.
+;
+; Groups: an overlay is one group, .sbss/.bss after .data/.sdata like every other section. The executable does not store the
+; uninitialised data (the startup code clears it at run time), so tools\cpe2exe.exe ends the image where the map puts the
+; overlay's .sbss or .bss. (The main program keeps .sbss/.bss in a group of their own, which the CPE leaves out.)
+
+; SLUS_007.47: the main executable (49 units + PsyQ libraries)
+; The address of its bss group is the end of the stored data (.data/.sdata of the main program); it is written out because PSYLINK
+; cannot compute it. If the data size changes, update it: the build ends with a check against retail, which flags a wrong one.
+
+	org	0x80010000
+	regs	pc=__SN_ENTRY_POINT
+
+text	group	obj(0x80010000)
+bss	group	bss,obj(0x800B235C)
+
+	section .rdata,text
+	section .text,text
+	section .ctors,text
+	section .dtors,text
+	section .data,text
+	section .sdata,text
+	section .sbss,bss
+	section .bss,bss
+
+	include	"@OBJ@\attack.obj"
+	include	"@OBJ@\cd.obj"
+	include	"@OBJ@\cinesco.obj"
+	include	"@OBJ@\config.obj"
+	include	"@OBJ@\cut.obj"
+	include	"@OBJ@\mem_card.obj"
+	include	"@OBJ@\door.obj"
+	include	"@OBJ@\eff0.obj"
+	include	"@OBJ@\eff1.obj"
+	include	"@OBJ@\em13.obj"
+	include	"@OBJ@\enemy.obj"
+	include	"@OBJ@\event.obj"
+	include	"@OBJ@\file.obj"
+	include	"@OBJ@\game.obj"
+	include	"@OBJ@\guide_ck.obj"
+	include	"@OBJ@\inventory.obj"
+	include	"@OBJ@\item.obj"
+	include	"@OBJ@\joint.obj"
+	include	"@OBJ@\mag.obj"
+	include	"@OBJ@\main.obj"
+	include	"@OBJ@\map.obj"
+	include	"@OBJ@\mojidisp.obj"
+	include	"@OBJ@\monitor.obj"
+	include	"@OBJ@\movie.obj"
+	include	"@OBJ@\namae.obj"
+	include	"@OBJ@\psp.obj"
+	include	"@OBJ@\oba.obj"
+	include	"@OBJ@\sce_at.obj"
+	include	"@OBJ@\om.obj"
+	include	"@OBJ@\oma.obj"
+	include	"@OBJ@\options.obj"
+	include	"@OBJ@\pad.obj"
+	include	"@OBJ@\player.obj"
+	include	"@OBJ@\pl_wep.obj"
+	include	"@OBJ@\pl_sce.obj"
+	include	"@OBJ@\room.obj"
+	include	"@OBJ@\sce0.obj"
+	include	"@OBJ@\sce1.obj"
+	include	"@OBJ@\sce2.obj"
+	include	"@OBJ@\sce3.obj"
+	include	"@OBJ@\sca.obj"
+	include	"@OBJ@\snd.obj"
+	include	"@OBJ@\stage.obj"
+	include	"@OBJ@\st_sub00.obj"
+	include	"@OBJ@\st_sub01.obj"
+	include	"@OBJ@\st_sub02.obj"
+	include	"@OBJ@\st_sub03.obj"
+	include	"@OBJ@\sub_pl.obj"
+	include	"@OBJ@\sub.obj"
+	include	"@OBJ@\str.obj"
+	include	"@OBJ@\zentai.obj"
+	include	"@OBJ@\em_sub.obj"
+	include	"@OBJ@\tyrant.obj"
+	include	"@PSYQ_3_7@\LIB\2MBYTE.OBJ"
+	inclib	"@PSYQ_4_2@\LIB\LIBAPI.LIB"
+	inclib	"@PSYQ_3_7@\LIB\LIBC.LIB"
+	inclib	"@PSYQ_3_7@\LIB\LIBCARD.LIB"
+	inclib	"@PSYQ_3_7@\LIB\LIBPRESS.LIB"
+	inclib	"@PSYQ_3_7@\LIB\LIBGPU.LIB"
+	inclib	"tools\custom-sdk\LIBGS.LIB"
+	inclib	"@PSYQ_3_7@\LIB\LIBGTE.LIB"
+	inclib	"@PSYQ_3_7@\LIB\LIBCD.LIB"
+	inclib	"@PSYQ_3_7@\LIB\LIBETC.LIB"
+	inclib	"@PSYQ_3_7@\LIB\LIBSN.LIB"
+	inclib	"@PSYQ_3_3@\LIB\LIBSND.LIB"
+	inclib	"@PSYQ_3_3@\LIB\LIBSPU.LIB"
+	inclib	"tools\custom-sdk\LIBPAD.LIB"
+
+; BSS order. PSYLINK allocates COMMON symbols by a hash of the name (sum of the bytes + length, mod 512), plain ones before aliased ones of the same
+; hash, and the aliased ones of a hash in the reverse order of these lines. The game's own names are free, so every common whose retail position
+; came from a name now carries a key here: `Pos_x alias Name` places Name where a name with the hash of Pos_x would be. The lines are fitted, not
+; recovered names. A self alias (`X alias X`) only moves an SDK or other symbol behind the aliased ones of its hash; the remaining lines
+; (POSITION, SpuCommonError, ...) give a second name to a common.
+_TITLE_rdata_org	alias	_TITLE_rdata_org
+_PROLOGUE_sbss_orgend	alias	_PROLOGUE_sbss_orgend
+_PROLOGUE_data_orgend	alias	_PROLOGUE_data_orgend
+_LOGO_sdata_orgend	alias	_LOGO_sdata_orgend
+_LOGO_org	alias	_LOGO_org
+Pos_ag	alias	Seq_table
+Pos_ax	alias	Main_vol
+Pos_ahz	alias	Pan_vol
+Pos_aav	alias	Mirror_min
+Pos_aax	alias	Mirror_max
+Pos_akz	alias	Mirror_pos
+Pos_zzzzaaac	alias	Sca_rtn_tbl
+Pos_f	alias	Oma_climb_om
+Pos_d	alias	Cd_read_loc
+Pos_c	alias	Door_cmd_slot
+Pos_b	alias	Xa_start_loc_pad
+Pos_a	alias	Xa_start_loc
+Pos_zzzzt	alias	Xa_vol_info
+Pos_zzzzs	alias	pPush_om
+Pos_zzzzq	alias	Cinesco_fade_num
+Pos_zzzzp	alias	Play_vsync
+Pos_zzzzm	alias	Item_pix_idx
+Pos_zzzzl	alias	Spu_key_stat_pad
+Pos_zzzzj	alias	Spu_key_stat
+Pos_zzzzi	alias	pItem_found
+Pos_zzzzg	alias	pCd_read_buf
+Pos_zzzzc	alias	Gs_packet_p
+Pos_zzzxa	alias	Cd_read_busy
+Pos_zzzva	alias	Svm_vab_total_pad
+Pos_zzzpa	alias	Item_pix_mask
+Pos_zzzna	alias	Map_upload_rect
+Pos_zzzma	alias	pCinesco_fade_dst
+Pos_zzzla	alias	pCinesco_fade_src
+Pos_zzzka	alias	pItem_work_base
+Pos_zzzia	alias	PSDIDX_pad
+Pos_zzzea	alias	Snd_keyon_mask
+Pos_zzzda	alias	Bgm_vh
+Pos_zzzca	alias	Snd_vab3_head
+Pos_zzzba	alias	Snd_vh_room
+Pos_zzzaa	alias	Snd_vab1_head
+Pos_zzwaa	alias	Snd_vh_core
+Pos_zzuaa	alias	pPanel_work
+Pos_zztaa	alias	Door_next_stage_room_pad
+Pos_zzsaa	alias	Door_next_stage_room
+Pos_zzqaa	alias	Cd_stereo_mode
+SpuCommonError	alias	Door_anim_id
+StRingIdx3	alias	StRingIdx3
+Pos_zziaa	alias	Str_unused_ring
+Pos_zzhaa	alias	Door_byte_var5
+Pos_zzcaa	alias	pRoom_scd_main
+Pos_zqaaa	alias	File_pickup_work
+Pos_saaaa	alias	Cd_file_no
+Pos_oaaaa	alias	pDoor_pkt_adr
+Pos_naaaa	alias	Door_anim_type
+Pos_kaaaa	alias	Sca_at_tbl_stat
+Pos_gaaaa	alias	Sce_event_adr
+Pos_zzzw	alias	pInit_scd_top
+Pos_zzzn	alias	Use_flg
+Pos_zzzh	alias	Snd_seq_tick_mode_pad2
+Pos_zzzg	alias	Snd_seq_tick_mode_pad
+Pos_zzoa	alias	Cnf_work
+Pos_zzja	alias	Sce_aot_tbl
+Pos_zzha	alias	St
+Pos_zzfa	alias	Xa_st_no
+Pos_zzda	alias	Imodel_num
+Pos_zzba	alias	Xa_start_sector_pad
+Pos_zyaa	alias	Xa_start_sector
+Pos_zwaa	alias	Task_now
+Pos_zuaa	alias	Cinesco_fade_tbl
+Pos_zsaa	alias	Seqvol
+Pos_zqaa	alias	Map_scr_work
+Pos_zkaa	alias	Sce3_logo_state_pad
+Pos_zgaa	alias	Sce3_logo_state
+Pos_zcaa	alias	Xa_end_sector
+Pos_yaaa	alias	Cd_sector
+Pos_uaaa	alias	StFinalSector_pad
+GsIDMATRIX	alias	GsIDMATRIX
+Pos_jaaa	alias	Door_obj_tbl_pad
+Pos_iaaa	alias	Door_obj_tbl
+Pos_zzzzsaaa	alias	Door_status_pad
+Pos_zzzzraaa	alias	Door_status
+Pos_zzzznaaa	alias	Sca_hit_top_pad
+Pos_zzzzjaaa	alias	Sca_hit_top
+Pos_zzzzgaaa	alias	pAot_last
+Pos_zzzzeaaa	alias	Sca_rtn_tbl_pad
+Pos_zzzyaaaa	alias	Door_shake
+Door_shake	alias	Door_shake_x
+Pos_zzz	alias	Eff_tim_adr
+Pos_zzo	alias	Svm_vh_pad
+Pos_zzl	alias	pAot_data
+Pos_zzh	alias	pSca_last_grp
+Pos_zzb	alias	GsORGOFSY_pad
+GsORGOFSY	alias	GsORGOFSY
+Pos_zya	alias	GsORGOFSX_pad
+Pos_zna	alias	pSca_hit_cur
+Pos_zja	alias	Omodel_num
+Pos_zea	alias	pOmodel_last
+Pos_zca	alias	pItem_model_last
+Pos_zaa	alias	Cd_xa_frame_cnt
+Pos_paa	alias	Cinesco_fade_rows
+Pos_laa	alias	Omodel_tbl
+Pos_jaa	alias	Room_psp
+Pos_haa	alias	pOm_tbl
+Pos_zzzztaa	alias	Xa_filter_chan
+Pos_zzzznaa	alias	Cd_xa_filter
+Pos_zzzzgaa	alias	Item_light_pad
+Pos_zzzzbaa	alias	Item_light
+Pos_zp	alias	Sprite_hide_mask
+POSITION	alias	Scr_ofs
+Pos_ze	alias	Snd_pre_adr
+PSDBASEY	alias	PSDBASEY
+Pos_ka	alias	Cd_file_size
+Pos_ja	alias	Xa_start_retry
+Pos_da	alias	Door_cmd_now_pad
+Pos_ba	alias	Door_cmd_now
+Pos_zzzzta	alias	GsZOVER_pad
+Pos_zzzzpa	alias	Game_unused_word
+Pos_zzzzia	alias	Door_camera
+Pos_zzzzca	alias	View_ref
+Pos_zzzuaa	alias	Sce_cut_save
+Pos_zzztaa	alias	GsLIGNR_pad
+Pos_zzzlaa	alias	GsLMODE_pad
+Pos_zzoaaa	alias	Door_snd_bank_pad
+Pos_zzjaaa	alias	Door_snd_bank
+Act_mtr_lv	alias	Act_mtr_lv
+Pos_zyaaaa	alias	Cd_status_res
+Pos_w	alias	Snd_unused_rev2
+_svm_orev2	alias	_svm_orev2
+Pos_zsaaaa	alias	Door_work
+Pos_v	alias	Sce_panel_work
+Pos_s	alias	Snd_unused_vg_set
+Dummy_err	alias	Snd_unused_err
+Pos_r	alias	Opt_from_title
+Pos_o	alias	Bgm_status_mask
+Pos_n	alias	Pl_turn_run_pad
+Pos_m	alias	Pl_turn_run
+Pos_l	alias	Pl_turn_walk
+Pos_k	alias	Pad_stand_turn_spd
+Demo_cur_counter	alias	demo_tbl0
+
+; PROG2\LOGO.EXE: overlay
+LOGO	group	obj(0x800E0000),file("@LINK@\LOGO.BIN")
+
+	section LOGO.rdata,LOGO
+	section LOGO.text,LOGO
+	section LOGO.ctors,LOGO
+	section LOGO.dtors,LOGO
+	section LOGO.data,LOGO
+	section LOGO.sdata,LOGO
+	section LOGO.sbss,LOGO
+	section LOGO.bss,LOGO
+
+	include	"@OVL@\LOGO\logo.obj"
+	include	"@OVL@\LOGO\NONE2.OBJ"
+
+; PROG2\PROLOGUE.EXE: overlay
+PROLOGUE	group	obj(0x800E0000),file("@LINK@\PROLOGUE.BIN")
+
+	section PROLOGUE.rdata,PROLOGUE
+	section PROLOGUE.text,PROLOGUE
+	section PROLOGUE.ctors,PROLOGUE
+	section PROLOGUE.dtors,PROLOGUE
+	section PROLOGUE.data,PROLOGUE
+	section PROLOGUE.sdata,PROLOGUE
+	section PROLOGUE.sbss,PROLOGUE
+	section PROLOGUE.bss,PROLOGUE
+
+	include	"@OVL@\PROLOGUE\prologue.obj"
+	include	"@OVL@\PROLOGUE\NONE2.OBJ"
+
+; PROG2\TITLE.EXE: overlay
+TITLE	group	obj(0x800E0000),file("@LINK@\TITLE.BIN")
+
+	section TITLE.rdata,TITLE
+	section TITLE.text,TITLE
+	section TITLE.ctors,TITLE
+	section TITLE.dtors,TITLE
+	section TITLE.data,TITLE
+	section TITLE.sdata,TITLE
+	section TITLE.sbss,TITLE
+	section TITLE.bss,TITLE
+
+	include	"@OVL@\TITLE\title.obj"
+	include	"@OVL@\TITLE\NONE2.OBJ"
+
+; PROG2\SELECT.EXE: overlay
+SELECT	group	obj(0x800E0000),file("@LINK@\SELECT.BIN")
+
+	section SELECT.rdata,SELECT
+	section SELECT.text,SELECT
+	section SELECT.ctors,SELECT
+	section SELECT.dtors,SELECT
+	section SELECT.data,SELECT
+	section SELECT.sdata,SELECT
+	section SELECT.sbss,SELECT
+	section SELECT.bss,SELECT
+
+	include	"@OVL@\SELECT\select.obj"
+	include	"@OVL@\SELECT\NONE2.OBJ"
+
+; PROG2\ENDING.EXE: overlay
+ENDING	group	obj(0x800E0000),file("@LINK@\ENDING.BIN")
+
+	section ENDING.rdata,ENDING
+	section ENDING.text,ENDING
+	section ENDING.ctors,ENDING
+	section ENDING.dtors,ENDING
+	section ENDING.data,ENDING
+	section ENDING.sdata,ENDING
+	section ENDING.sbss,ENDING
+	section ENDING.bss,ENDING
+
+	include	"@OVL@\ENDING\ending.obj"
+	include	"@OVL@\ENDING\NONE2.OBJ"
+
+; PROG2\STAGE1.EXE: overlay
+STAGE1	group	obj(0x80105400),file("@LINK@\STAGE1.BIN")
+
+	section STAGE1.rdata,STAGE1
+	section STAGE1.text,STAGE1
+	section STAGE1.ctors,STAGE1
+	section STAGE1.dtors,STAGE1
+	section STAGE1.data,STAGE1
+	section STAGE1.sdata,STAGE1
+	section STAGE1.sbss,STAGE1
+	section STAGE1.bss,STAGE1
+
+	include	"@OVL@\STAGE1\stage1.obj"
+	include	"@OVL@\STAGE1\stage1_em00.obj"
+	include	"@OVL@\STAGE1\stage1_em02.obj"
+	include	"@OVL@\STAGE1\stage1_em05.obj"
+	include	"@OVL@\STAGE1\stage1_em0f.obj"
+	include	"@OVL@\STAGE1\NONE2.OBJ"
+
+; PROG2\STAGE2.EXE: overlay
+STAGE2	group	obj(0x80105400),file("@LINK@\STAGE2.BIN")
+
+	section STAGE2.rdata,STAGE2
+	section STAGE2.text,STAGE2
+	section STAGE2.ctors,STAGE2
+	section STAGE2.dtors,STAGE2
+	section STAGE2.data,STAGE2
+	section STAGE2.sdata,STAGE2
+	section STAGE2.sbss,STAGE2
+	section STAGE2.bss,STAGE2
+
+	include	"@OVL@\STAGE2\stage2.obj"
+	include	"@OVL@\STAGE2\stage2_em00.obj"
+	include	"@OVL@\STAGE2\stage2_em05.obj"
+	include	"@OVL@\STAGE2\stage2_em0d.obj"
+	include	"@OVL@\STAGE2\NONE2.OBJ"
+
+; PROG2\STAGE3.EXE: overlay
+STAGE3	group	obj(0x80105400),file("@LINK@\STAGE3.BIN")
+
+	section STAGE3.rdata,STAGE3
+	section STAGE3.text,STAGE3
+	section STAGE3.ctors,STAGE3
+	section STAGE3.dtors,STAGE3
+	section STAGE3.data,STAGE3
+	section STAGE3.sdata,STAGE3
+	section STAGE3.sbss,STAGE3
+	section STAGE3.bss,STAGE3
+
+	include	"@OVL@\STAGE3\stage3.obj"
+	include	"@OVL@\STAGE3\stage3_em02.obj"
+	include	"@OVL@\STAGE3\stage3_em04.obj"
+	include	"@OVL@\STAGE3\stage3_em06.obj"
+	include	"@OVL@\STAGE3\stage3_em0a.obj"
+	include	"@OVL@\STAGE3\stage3_em0c.obj"
+	include	"@OVL@\STAGE3\NONE2.OBJ"
+
+; PROG2\STAGE4.EXE: overlay
+STAGE4	group	obj(0x80105400),file("@LINK@\STAGE4.BIN")
+
+	section STAGE4.rdata,STAGE4
+	section STAGE4.text,STAGE4
+	section STAGE4.ctors,STAGE4
+	section STAGE4.dtors,STAGE4
+	section STAGE4.data,STAGE4
+	section STAGE4.sdata,STAGE4
+	section STAGE4.sbss,STAGE4
+	section STAGE4.bss,STAGE4
+
+	include	"@OVL@\STAGE4\stage4.obj"
+	include	"@OVL@\STAGE4\stage4_em00.obj"
+	include	"@OVL@\STAGE4\stage4_em03.obj"
+	include	"@OVL@\STAGE4\stage4_em07.obj"
+	include	"@OVL@\STAGE4\stage4_em08.obj"
+	include	"@OVL@\STAGE4\stage4_em0b.obj"
+	include	"@OVL@\STAGE4\stage4_em0e.obj"
+	include	"@OVL@\STAGE4\stage4_em0f.obj"
+	include	"@OVL@\STAGE4\NONE2.OBJ"
+
+; PROG2\STAGE5.EXE: overlay
+STAGE5	group	obj(0x80105400),file("@LINK@\STAGE5.BIN")
+
+	section STAGE5.rdata,STAGE5
+	section STAGE5.text,STAGE5
+	section STAGE5.ctors,STAGE5
+	section STAGE5.dtors,STAGE5
+	section STAGE5.data,STAGE5
+	section STAGE5.sdata,STAGE5
+	section STAGE5.sbss,STAGE5
+	section STAGE5.bss,STAGE5
+
+	include	"@OVL@\STAGE5\stage5.obj"
+	include	"@OVL@\STAGE5\stage5_em00.obj"
+	include	"@OVL@\STAGE5\stage5_em09.obj"
+	include	"@OVL@\STAGE5\stage5_em0c.obj"
+	include	"@OVL@\STAGE5\stage5_em14.obj"
+	include	"@OVL@\STAGE5\stage5_em15.obj"
+	include	"@OVL@\STAGE5\NONE2.OBJ"
+
+; PROG2\STAGE6.EXE: overlay
+STAGE6	group	obj(0x80105400),file("@LINK@\STAGE6.BIN")
+
+	section STAGE6.rdata,STAGE6
+	section STAGE6.text,STAGE6
+	section STAGE6.ctors,STAGE6
+	section STAGE6.dtors,STAGE6
+	section STAGE6.data,STAGE6
+	section STAGE6.sdata,STAGE6
+	section STAGE6.sbss,STAGE6
+	section STAGE6.bss,STAGE6
+
+	include	"@OVL@\STAGE6\stage6.obj"
+	include	"@OVL@\STAGE6\stage6_em00.obj"
+	include	"@OVL@\STAGE6\stage6_em03.obj"
+	include	"@OVL@\STAGE6\stage6_em05.obj"
+	include	"@OVL@\STAGE6\stage6_em06.obj"
+	include	"@OVL@\STAGE6\stage6_em0f.obj"
+	include	"@OVL@\STAGE6\NONE2.OBJ"
+
+; PROG2\STAGE7.EXE: overlay
+STAGE7	group	obj(0x80105400),file("@LINK@\STAGE7.BIN")
+
+	section STAGE7.rdata,STAGE7
+	section STAGE7.text,STAGE7
+	section STAGE7.ctors,STAGE7
+	section STAGE7.dtors,STAGE7
+	section STAGE7.data,STAGE7
+	section STAGE7.sdata,STAGE7
+	section STAGE7.sbss,STAGE7
+	section STAGE7.bss,STAGE7
+
+	include	"@OVL@\STAGE7\stage7.obj"
+	include	"@OVL@\STAGE7\stage7_em00.obj"
+	include	"@OVL@\STAGE7\stage7_em05.obj"
+	include	"@OVL@\STAGE7\stage7_em06.obj"
+	include	"@OVL@\STAGE7\stage7_em0d.obj"
+	include	"@OVL@\STAGE7\NONE2.OBJ"
+
+; fixed RAM blocks the game code addresses by name: the G global
+G	equ	$800C3000

@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug PSX-USA|Win32">
+      <Configuration>Debug PSX-USA</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release PSX-USA|Win32">
+      <Configuration>Release PSX-USA</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug PSX-USA|x64">
+      <Configuration>Debug PSX-USA</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release PSX-USA|x64">
+      <Configuration>Release PSX-USA</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>18.0</VCProjectVersion>
+    <ProjectGuid>{76445BF5-6523-7243-6A75-299B2693214D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>bio1-ds</RootNamespace>
+    <ProjectName>bio1-ds</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug PSX-USA|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release PSX-USA|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug PSX-USA|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release PSX-USA|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug PSX-USA|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release PSX-USA|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug PSX-USA|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release PSX-USA|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug PSX-USA|Win32'">
+    <NMakeOutput>OBJ\PSX\USA\SLUS_007.47</NMakeOutput>
+    <NMakeBuildCommandLine>"$(ProjectDir)build.bat" psx-usa build</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>"$(ProjectDir)build.bat" psx-usa rebuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>"$(ProjectDir)build.bat" psx-usa clean</NMakeCleanCommandLine>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;LANGUAGE_C;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <IncludePath>$(ProjectDir)Bio1\prog;$(ProjectDir)Bio1\def;C:\Framework\sdk\psx\PSY-Q_3_7\INCLUDE;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release PSX-USA|Win32'">
+    <NMakeOutput>OBJ\PSX\USA\SLUS_007.47</NMakeOutput>
+    <NMakeBuildCommandLine>"$(ProjectDir)build.bat" psx-usa build</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>"$(ProjectDir)build.bat" psx-usa rebuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>"$(ProjectDir)build.bat" psx-usa clean</NMakeCleanCommandLine>
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;LANGUAGE_C;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <IncludePath>$(ProjectDir)Bio1\prog;$(ProjectDir)Bio1\def;C:\Framework\sdk\psx\PSY-Q_3_7\INCLUDE;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug PSX-USA|x64'">
+    <NMakeOutput>OBJ\PSX\USA\SLUS_007.47</NMakeOutput>
+    <NMakeBuildCommandLine>"$(ProjectDir)build.bat" psx-usa build</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>"$(ProjectDir)build.bat" psx-usa rebuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>"$(ProjectDir)build.bat" psx-usa clean</NMakeCleanCommandLine>
+    <NMakePreprocessorDefinitions>_DEBUG;LANGUAGE_C;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <IncludePath>$(ProjectDir)Bio1\prog;$(ProjectDir)Bio1\def;C:\Framework\sdk\psx\PSY-Q_3_7\INCLUDE;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release PSX-USA|x64'">
+    <NMakeOutput>OBJ\PSX\USA\SLUS_007.47</NMakeOutput>
+    <NMakeBuildCommandLine>"$(ProjectDir)build.bat" psx-usa build</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>"$(ProjectDir)build.bat" psx-usa rebuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>"$(ProjectDir)build.bat" psx-usa clean</NMakeCleanCommandLine>
+    <NMakePreprocessorDefinitions>NDEBUG;LANGUAGE_C;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <IncludePath>$(ProjectDir)Bio1\prog;$(ProjectDir)Bio1\def;C:\Framework\sdk\psx\PSY-Q_3_7\INCLUDE;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug PSX-USA|Win32'">
+    <Manifest>
+      <EnableSegmentHeap>true</EnableSegmentHeap>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release PSX-USA|Win32'">
+    <Manifest>
+      <EnableSegmentHeap>true</EnableSegmentHeap>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug PSX-USA|x64'">
+    <Manifest>
+      <EnableSegmentHeap>true</EnableSegmentHeap>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release PSX-USA|x64'">
+    <Manifest>
+      <EnableSegmentHeap>true</EnableSegmentHeap>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="build.bat" />
+    <None Include="setup.bat" />
+    <None Include="makefile" />
+    <None Include="makefile.link" />
+    <None Include="Bio1\lib\PADIF.S" />
+    <None Include="Bio1\lib\PADMAIN.S" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Bio1\prog\ATTACK.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\CD.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\CINESCO.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\CONFIG.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\CUT.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\DOOR.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EFF0.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EFF1.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM00.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM02.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM03.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM04.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM05.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM06.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM07.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM08.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM09.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM0A.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM0B.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM0C.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM0D.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM0E.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM0F.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM13.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM14.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM15.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM_SUB.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\ENEMY.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EVENT.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\FILE.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\GAME.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\GUIDE_CK.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\INVENTORY.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\ITEM.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\JOINT.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\MAG.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\MAIN.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\MAP.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\MEM_CARD.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\MOJIDISP.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\MONITOR.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\MOVIE.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\NAMAE.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\OBA.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\OM.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\OMA.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\OPTIONS.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\PAD.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\PL_SCE.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\PL_WEP.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\PLAYER.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\PSP.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\ROOM.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\SCA.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\SCE0.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\SCE1.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\SCE2.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\SCE3.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\SCE_AT.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\SND.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\ST_SUB00.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\ST_SUB01.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\ST_SUB02.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\ST_SUB03.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\STAGE.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\STR.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\SUB.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\SUB_PL.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\TYRANT.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\ZENTAI.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\ENDING.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\LOGO.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\PROLOGUE.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\SELECT.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\STAGE1.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\STAGE2.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\STAGE3.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\STAGE4.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\STAGE5.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\STAGE6.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\STAGE7.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\TITLE.C">
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bio1\prog\ATTACK.H" />
+    <ClInclude Include="Bio1\prog\CD.H" />
+    <ClInclude Include="Bio1\prog\CINESCO.H" />
+    <ClInclude Include="Bio1\prog\CONFIG.H" />
+    <ClInclude Include="Bio1\prog\CUT.H" />
+    <ClInclude Include="Bio1\prog\DOOR.H" />
+    <ClInclude Include="Bio1\prog\EFF0.H" />
+    <ClInclude Include="Bio1\prog\EFF1.H" />
+    <ClInclude Include="Bio1\prog\EM00.H" />
+    <ClInclude Include="Bio1\prog\EM02.H" />
+    <ClInclude Include="Bio1\prog\EM03.H" />
+    <ClInclude Include="Bio1\prog\EM04.H" />
+    <ClInclude Include="Bio1\prog\EM05.H" />
+    <ClInclude Include="Bio1\prog\EM06.H" />
+    <ClInclude Include="Bio1\prog\EM07.H" />
+    <ClInclude Include="Bio1\prog\EM08.H" />
+    <ClInclude Include="Bio1\prog\EM09.H" />
+    <ClInclude Include="Bio1\prog\EM0A.H" />
+    <ClInclude Include="Bio1\prog\EM0B.H" />
+    <ClInclude Include="Bio1\prog\EM0C.H" />
+    <ClInclude Include="Bio1\prog\EM0D.H" />
+    <ClInclude Include="Bio1\prog\EM0E.H" />
+    <ClInclude Include="Bio1\prog\EM0F.H" />
+    <ClInclude Include="Bio1\prog\EM13.H" />
+    <ClInclude Include="Bio1\prog\EM14.H" />
+    <ClInclude Include="Bio1\prog\EM15.H" />
+    <ClInclude Include="Bio1\prog\EM_SUB.H" />
+    <ClInclude Include="Bio1\prog\ENEMY.H" />
+    <ClInclude Include="Bio1\prog\EVENT.H" />
+    <ClInclude Include="Bio1\prog\FILE.H" />
+    <ClInclude Include="Bio1\prog\GAME.H" />
+    <ClInclude Include="Bio1\prog\GUIDE_CK.H" />
+    <ClInclude Include="Bio1\prog\INVENTORY.H" />
+    <ClInclude Include="Bio1\prog\ITEM.H" />
+    <ClInclude Include="Bio1\prog\JOINT.H" />
+    <ClInclude Include="Bio1\prog\MAG.H" />
+    <ClInclude Include="Bio1\prog\MAIN.H" />
+    <ClInclude Include="Bio1\prog\MAP.H" />
+    <ClInclude Include="Bio1\prog\MEM_CARD.H" />
+    <ClInclude Include="Bio1\prog\MOJIDISP.H" />
+    <ClInclude Include="Bio1\prog\MONITOR.H" />
+    <ClInclude Include="Bio1\prog\MOVIE.H" />
+    <ClInclude Include="Bio1\prog\NAMAE.H" />
+    <ClInclude Include="Bio1\prog\OBA.H" />
+    <ClInclude Include="Bio1\prog\OM.H" />
+    <ClInclude Include="Bio1\prog\OMA.H" />
+    <ClInclude Include="Bio1\prog\OPTIONS.H" />
+    <ClInclude Include="Bio1\prog\PAD.H" />
+    <ClInclude Include="Bio1\prog\PL_SCE.H" />
+    <ClInclude Include="Bio1\prog\PL_WEP.H" />
+    <ClInclude Include="Bio1\prog\PLAYER.H" />
+    <ClInclude Include="Bio1\prog\PSP.H" />
+    <ClInclude Include="Bio1\prog\ROOM.H" />
+    <ClInclude Include="Bio1\prog\SCA.H" />
+    <ClInclude Include="Bio1\prog\SCE0.H" />
+    <ClInclude Include="Bio1\prog\SCE1.H" />
+    <ClInclude Include="Bio1\prog\SCE2.H" />
+    <ClInclude Include="Bio1\prog\SCE3.H" />
+    <ClInclude Include="Bio1\prog\SCE_AT.H" />
+    <ClInclude Include="Bio1\prog\SND.H" />
+    <ClInclude Include="Bio1\prog\ST_SUB00.H" />
+    <ClInclude Include="Bio1\prog\ST_SUB01.H" />
+    <ClInclude Include="Bio1\prog\ST_SUB02.H" />
+    <ClInclude Include="Bio1\prog\ST_SUB03.H" />
+    <ClInclude Include="Bio1\prog\STAGE.H" />
+    <ClInclude Include="Bio1\prog\STR.H" />
+    <ClInclude Include="Bio1\prog\SUB.H" />
+    <ClInclude Include="Bio1\prog\SUB_PL.H" />
+    <ClInclude Include="Bio1\prog\TYRANT.H" />
+    <ClInclude Include="Bio1\prog\ZENTAI.H" />
+    <ClInclude Include="Bio1\prog2\ENDING.H" />
+    <ClInclude Include="Bio1\prog2\LOGO.H" />
+    <ClInclude Include="Bio1\prog2\PROLOGUE.H" />
+    <ClInclude Include="Bio1\prog2\SELECT.H" />
+    <ClInclude Include="Bio1\prog2\STAGE1.H" />
+    <ClInclude Include="Bio1\prog2\STAGE2.H" />
+    <ClInclude Include="Bio1\prog2\STAGE3.H" />
+    <ClInclude Include="Bio1\prog2\STAGE4.H" />
+    <ClInclude Include="Bio1\prog2\STAGE5.H" />
+    <ClInclude Include="Bio1\prog2\STAGE6.H" />
+    <ClInclude Include="Bio1\prog2\STAGE7.H" />
+    <ClInclude Include="Bio1\prog2\TITLE.H" />
+    <ClInclude Include="Bio1\def\FILE_LOC.H" />
+    <ClInclude Include="Bio1\def\FILECODE.H" />
+    <ClInclude Include="Bio1\def\FLAG.H" />
+    <ClInclude Include="Bio1\def\MEM_MAP.H" />
+    <ClInclude Include="Bio1\def\SCENARIO.H" />
+    <ClInclude Include="Bio1\def\SCRATCHPAD.H" />
+    <ClInclude Include="Bio1\def\SDK.H" />
+    <ClInclude Include="Bio1\def\TYPES.H" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Bio1\config\psx-usa\retail_sha256.txt" />
+    <Text Include="tools\build_gcc.bat" />
+    <Text Include="tools\build_tools.bat" />
+    <Text Include="tools\cc263.c" />
+    <Text Include="tools\cpe2exe.c" />
+    <Text Include="tools\gen_linkscript.c" />
+    <Text Include="tools\lf2crlf.c" />
+    <Text Include="tools\ovlprefix.c" />
+    <Text Include="tools\retailcheck.c" />
+    <Text Include="tools\sdklibbuild.c" />
+    <Text Include="tools\sdkroot.h" />
+    <Text Include="tools\sdkroot.ini" />
+    <Text Include="README.md" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

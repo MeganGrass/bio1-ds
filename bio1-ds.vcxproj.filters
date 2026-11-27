@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Bio1">
+      <UniqueIdentifier>{c973cb7d-d1d0-52ee-8e31-295e3df9bd78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bio1\config">
+      <UniqueIdentifier>{fb462a7b-e3b3-5da0-9a60-0290a7c76acf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bio1\config\psx-usa">
+      <UniqueIdentifier>{bea5730b-ee3c-506d-84e7-b46d8c320230}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bio1\def">
+      <UniqueIdentifier>{d6701c23-4cfc-5b78-ab23-370038204e66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bio1\lib">
+      <UniqueIdentifier>{5ec28f92-d9e1-57cf-9cdc-0f25e0c61dc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bio1\prog">
+      <UniqueIdentifier>{848f84dc-e9c9-5720-ae28-f83a5a7c2f84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bio1\prog2">
+      <UniqueIdentifier>{3bcca712-857a-5771-8f8a-d5fe26925fef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools">
+      <UniqueIdentifier>{18c2ac2c-36e3-58da-815e-06808a80cae0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="build.bat" />
+    <None Include="setup.bat" />
+    <None Include="makefile" />
+    <None Include="makefile.link" />
+    <None Include="Bio1\lib\PADIF.S">
+      <Filter>Bio1\lib</Filter>
+    </None>
+    <None Include="Bio1\lib\PADMAIN.S">
+      <Filter>Bio1\lib</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Bio1\prog\ATTACK.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\CD.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\CINESCO.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\CONFIG.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\CUT.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\DOOR.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EFF0.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EFF1.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM00.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM02.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM03.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM04.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM05.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM06.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM07.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM08.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM09.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM0A.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM0B.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM0C.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM0D.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM0E.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM0F.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM13.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM14.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM15.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EM_SUB.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\ENEMY.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\EVENT.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\FILE.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\GAME.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\GUIDE_CK.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\INVENTORY.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\ITEM.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\JOINT.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\MAG.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\MAIN.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\MAP.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\MEM_CARD.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\MOJIDISP.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\MONITOR.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\MOVIE.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\NAMAE.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\OBA.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\OM.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\OMA.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\OPTIONS.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\PAD.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\PL_SCE.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\PL_WEP.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\PLAYER.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\PSP.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\ROOM.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\SCA.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\SCE0.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\SCE1.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\SCE2.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\SCE3.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\SCE_AT.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\SND.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\ST_SUB00.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\ST_SUB01.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\ST_SUB02.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\ST_SUB03.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\STAGE.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\STR.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\SUB.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\SUB_PL.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\TYRANT.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog\ZENTAI.C">
+      <Filter>Bio1\prog</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\ENDING.C">
+      <Filter>Bio1\prog2</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\LOGO.C">
+      <Filter>Bio1\prog2</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\PROLOGUE.C">
+      <Filter>Bio1\prog2</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\SELECT.C">
+      <Filter>Bio1\prog2</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\STAGE1.C">
+      <Filter>Bio1\prog2</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\STAGE2.C">
+      <Filter>Bio1\prog2</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\STAGE3.C">
+      <Filter>Bio1\prog2</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\STAGE4.C">
+      <Filter>Bio1\prog2</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\STAGE5.C">
+      <Filter>Bio1\prog2</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\STAGE6.C">
+      <Filter>Bio1\prog2</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\STAGE7.C">
+      <Filter>Bio1\prog2</Filter>
+    </ClCompile>
+    <ClCompile Include="Bio1\prog2\TITLE.C">
+      <Filter>Bio1\prog2</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bio1\prog\ATTACK.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\CD.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\CINESCO.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\CONFIG.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\CUT.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\DOOR.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EFF0.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EFF1.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EM00.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EM02.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EM03.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EM04.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EM05.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EM06.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EM07.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EM08.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EM09.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EM0A.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EM0B.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EM0C.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EM0D.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EM0E.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EM0F.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EM13.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EM14.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EM15.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EM_SUB.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\ENEMY.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\EVENT.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\FILE.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\GAME.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\GUIDE_CK.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\INVENTORY.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\ITEM.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\JOINT.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\MAG.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\MAIN.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\MAP.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\MEM_CARD.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\MOJIDISP.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\MONITOR.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\MOVIE.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\NAMAE.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\OBA.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\OM.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\OMA.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\OPTIONS.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\PAD.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\PL_SCE.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\PL_WEP.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\PLAYER.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\PSP.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\ROOM.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\SCA.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\SCE0.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\SCE1.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\SCE2.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\SCE3.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\SCE_AT.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\SND.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\ST_SUB00.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\ST_SUB01.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\ST_SUB02.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\ST_SUB03.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\STAGE.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\STR.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\SUB.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\SUB_PL.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\TYRANT.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog\ZENTAI.H">
+      <Filter>Bio1\prog</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog2\ENDING.H">
+      <Filter>Bio1\prog2</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog2\LOGO.H">
+      <Filter>Bio1\prog2</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog2\PROLOGUE.H">
+      <Filter>Bio1\prog2</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog2\SELECT.H">
+      <Filter>Bio1\prog2</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog2\STAGE1.H">
+      <Filter>Bio1\prog2</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog2\STAGE2.H">
+      <Filter>Bio1\prog2</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog2\STAGE3.H">
+      <Filter>Bio1\prog2</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog2\STAGE4.H">
+      <Filter>Bio1\prog2</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog2\STAGE5.H">
+      <Filter>Bio1\prog2</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog2\STAGE6.H">
+      <Filter>Bio1\prog2</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog2\STAGE7.H">
+      <Filter>Bio1\prog2</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\prog2\TITLE.H">
+      <Filter>Bio1\prog2</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\def\FILE_LOC.H">
+      <Filter>Bio1\def</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\def\FILECODE.H">
+      <Filter>Bio1\def</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\def\FLAG.H">
+      <Filter>Bio1\def</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\def\MEM_MAP.H">
+      <Filter>Bio1\def</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\def\SCENARIO.H">
+      <Filter>Bio1\def</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\def\SCRATCHPAD.H">
+      <Filter>Bio1\def</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\def\SDK.H">
+      <Filter>Bio1\def</Filter>
+    </ClInclude>
+    <ClInclude Include="Bio1\def\TYPES.H">
+      <Filter>Bio1\def</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Bio1\config\psx-usa\retail_sha256.txt">
+      <Filter>Bio1\config\psx-usa</Filter>
+    </Text>
+    <Text Include="tools\build_gcc.bat">
+      <Filter>tools</Filter>
+    </Text>
+    <Text Include="tools\build_tools.bat">
+      <Filter>tools</Filter>
+    </Text>
+    <Text Include="tools\cc263.c">
+      <Filter>tools</Filter>
+    </Text>
+    <Text Include="tools\cpe2exe.c">
+      <Filter>tools</Filter>
+    </Text>
+    <Text Include="tools\gen_linkscript.c">
+      <Filter>tools</Filter>
+    </Text>
+    <Text Include="tools\lf2crlf.c">
+      <Filter>tools</Filter>
+    </Text>
+    <Text Include="tools\ovlprefix.c">
+      <Filter>tools</Filter>
+    </Text>
+    <Text Include="tools\retailcheck.c">
+      <Filter>tools</Filter>
+    </Text>
+    <Text Include="tools\sdklibbuild.c">
+      <Filter>tools</Filter>
+    </Text>
+    <Text Include="tools\sdkroot.h">
+      <Filter>tools</Filter>
+    </Text>
+    <Text Include="tools\sdkroot.ini">
+      <Filter>tools</Filter>
+    </Text>
+    <Text Include="README.md" />
+  </ItemGroup>
+</Project>
